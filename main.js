@@ -25,8 +25,8 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export async function ambilDaftarMapel() {
-  const refDokumen = collection(db, "jadwal-mapel");
-  const kueri = query(refDokumen, orderBy("mapel"));
+  const refDokumen = collection(db, "jadwal");
+  const kueri = query(refDokumen, orderBy("hari"));
   const cuplikanKueri = await getDocs(kueri);
 
   let hasil = [];
@@ -63,7 +63,7 @@ export async function tambahjadwalmapel(hari, waktu, kelas, mapel, gurumapel) {
   }
 }
 //fungsi hapus untuk data
-export async function hapusmapel(docId) {
+export async function hapusMapel(docId) {
   await deleteDoc(doc(db, "jadwal-mapel", docId));
 }  
 
@@ -77,7 +77,7 @@ export async function ubahdaftarmapel(docId, hari, waktu, kelas, mapel, gurumape
   });
 }
 
-export async function ambilDaftarMapel(docId) {
+export async function ambilmapel(docId) {
   const docRef = await doc(db, "jadwa-mapel", docId);
   const docSnap = await getDoc(docRef);
 
