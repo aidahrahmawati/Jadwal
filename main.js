@@ -50,7 +50,7 @@ export function formatAngka(x) {
 
 export async function tambahjadwalmapel(hari, waktu, kelas, mapel, gurumapel) {
   try {
-    const dokRef = await addDoc(collection(db, 'jadwal-mapel'), {
+    const dokRef = await addDoc(collection(db, 'jadwal'), {
       hari: hari,
       waktu: waktu,
       kelas: kelas,
@@ -64,11 +64,11 @@ export async function tambahjadwalmapel(hari, waktu, kelas, mapel, gurumapel) {
 }
 //fungsi hapus untuk data
 export async function hapusMapel(docId) {
-  await deleteDoc(doc(db, "jadwal-mapel", docId));
+  await deleteDoc(doc(db, "jadwal", docId));
 }
 
 export async function ubahdaftarmapel(docId, hari, waktu, kelas, mapel, gurumapel) {
-  await updateDoc(doc(db, "jadwal-mapel", docId), {
+  await updateDoc(doc(db, "jadwal", docId), {
     hari: hari,
     waktu: waktu,
     kelas: kelas,
@@ -78,7 +78,7 @@ export async function ubahdaftarmapel(docId, hari, waktu, kelas, mapel, gurumape
 }
 
 export async function ambilmapel(docId) {
-  const docRef = await doc(db, "jadwa-mapel", docId);
+  const docRef = await doc(db, "jadwal", docId);
   const docSnap = await getDoc(docRef);
 
   return await docSnap.data();
