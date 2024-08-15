@@ -19,19 +19,19 @@
     </div>
     <div class="mb-3">
       <label class="form-label">waktu</label>
-      <input type="date" class="form-control" id="input-waktu">
+      <input type="text" class="form-control" id="input-waktu">
     </div>
     <div class="mb-3">
      <select class="form-select" aria-label="Default select example" id="input-kelas">
   <option selected>kelas</option>
-  <option value="X">XI</option>
+  <option value="X">X</option>
   <option value="XI">XI</option>
   <option value="XII">XII</option>
 </select>
     </div>
         <div class="mb-3">
       <label class="form-label">mapel</label>
-      <input type="date" class="form-control" id="input-mapel">
+      <input type="text" class="form-control" id="input-mapel">
     </div>
     <div class="mb-3">
       <label class="form-label">guru mapel</label>
@@ -59,7 +59,7 @@
     const docId = parameterURL.get('docId')
     const jadwal = await ambilmapel(docId);
 
-    elemenhari.value = jadwal.hari;
+    elemenhari.value = jadwal-mapel.hari;
     elemenwaktu.value = jadwal.waktu;
     elemenkelas.value = jadwal.kelas;
     elemenmapel.value = jadwal.mapel;
