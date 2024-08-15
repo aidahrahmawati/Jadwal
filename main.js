@@ -37,14 +37,14 @@ export async function ambilDaftarMapel() {
       waktu: dok.data().waktu,
       kelas: dok.data().kelas,
       mapel: dok.data().mapel,
-     gurumapel: dok.data().gurumapel,
+      gurumapel: dok.data().gurumapel,
     });
   });
-  
-    return hasil;
+
+  return hasil;
 }
-  
-  export function formatAngka(x) {
+
+export function formatAngka(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
@@ -65,7 +65,7 @@ export async function tambahjadwalmapel(hari, waktu, kelas, mapel, gurumapel) {
 //fungsi hapus untuk data
 export async function hapusMapel(docId) {
   await deleteDoc(doc(db, "jadwal-mapel", docId));
-}  
+}
 
 export async function ubahdaftarmapel(docId, hari, waktu, kelas, mapel, gurumapel) {
   await updateDoc(doc(db, "jadwal-mapel", docId), {

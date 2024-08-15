@@ -59,7 +59,7 @@
     const docId = parameterURL.get('docId')
     const jadwal = await ambilmapel(docId);
 
-    elemenhari.value = jadwal-mapel.hari;
+    elemenhari.value = jadwal.hari;
     elemenwaktu.value = jadwal.waktu;
     elemenkelas.value = jadwal.kelas;
     elemenmapel.value = jadwal.mapel;
